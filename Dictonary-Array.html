@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creat a dictionary with 2 Array</title>
+    <style>
+        div {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <div style="font-size: 21px">Dictionary English - Vietnamese</div>
+    <br/>
+    <br/>
+    <input id="inputText" type="text" value=""/>
+    <button id="seach" type="button" onclick="searchKeyword();">Tìm kiếm</button>
+    <div id="result"></div>
+</form>
+<script>
+    let englishArray = ["width", "wife", "wild", "wildly", "will", "willing", "willingly"];
+    let vietnamArray = ["Rộng", "Vợ", "Hoang dã", "Hoang dại", "Sẽ", "vui lòng", "Tự nguyện"];
+
+
+    function searchKeyword() {
+        let keyword = document.getElementById('inputText').value;
+        let flag = false;
+        for (i = 0; i < vietnamArray.length; i++) {
+            if (keyword == englishArray[i]) {
+                flag = true;
+                // alert(vietnamArray[i]);
+                document.getElementById('result').innerHTML = keyword + " có nghĩa là: " + vietnamArray[i];
+            }
+        }
+        if (!flag) {
+            document.getElementById('result').innerHTML = "Không tìm thấy dữ liệu";
+        }
+    }
+
+</script>
+</body>
+</html>
